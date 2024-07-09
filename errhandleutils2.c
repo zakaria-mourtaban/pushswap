@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:45:02 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/06 15:46:31 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/09 13:45:53 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	free_variables(char **variables, int *single_ptr)
 	while (variables[i] != NULL)
 	{
 		free(variables[i++]);
+		i++;
 	}
 	free(variables);
 	errorandexit("ERROR");
@@ -63,11 +64,14 @@ int	ft_isdigitarr(char **s)
 		i = 0;
 		while (s[j][i] != '\0')
 		{
-			if ((!(s[j][i] >= '0' && s[j][i] <= '9'))
-				&& s[j][i] != '-' && s[j][i] != '+')
+			if ((!(s[j][i] >= '0' && s[j][i] <= '9')) && s[j][i] != '-'
+				&& s[j][i] != '+')
 				return (0);
 			i++;
 		}
+		if ((s[j][0] == '-' && s[j][1] == '\0') || (s[j][0] == '+'
+				&& s[j][1] == '\0'))
+			return (0);
 		j++;
 	}
 	return (1);
