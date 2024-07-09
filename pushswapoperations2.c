@@ -5,64 +5,52 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/09 14:35:03 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/09 14:35:22 by zmourtab         ###   ########.fr       */
+/*   Created: 2024/07/09 15:36:58 by zmourtab          #+#    #+#             */
+/*   Updated: 2024/07/09 15:38:49 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	rrb(t_list *stackb)
+int	push(t_list **stack_to, t_list **stack_from)
 {
-	t_list	*tmpb;
-	t_list	*tmpbblast;
-	t_list	*tmplast;
+	t_list	*tmp;
+	t_list	*head_to;
+	t_list	*head_from;
 
-	if (stackb == NULL)
-		return ;
-	if (stackb->next == NULL)
-		return ;
-	tmpb = stackb;
-	tmplast = ft_lstlast(tmpb);
-	while (tmpbblast->next->next != NULL)
-		tmpbblast = tmpbblast->next;
-	tmpbblast->next = NULL;
-	tmplast->next = tmpb;
-	stackb = tmplast;
+	if (ft_lstsize(*stack_from) == 0)
+		return (-1);
+	head_to = *stack_to;
+	head_from = *stack_from;
+	tmp = head_from;
+	head_from = head_from->next;
+	*stack_from = head_from;
+	if (!head_to)
+	{
+		head_to = tmp;
+		head_to->next = NULL;
+		*stack_to = head_to;
+	}
+	else
+	{
+		tmp->next = head_to;
+		*stack_to = tmp;
+	}
+	return (0);
 }
 
-void	rrr(t_list *stacka, t_list *stackb)
+int	pa(t_list **stack_a, t_list **stack_b)
 {
-	ra(stacka);
-	rb(stackb);
+	if (push(stack_a, stack_b) == -1)
+		return (-1);
+	ft_putendl_fd("pa", 1);
+	return (0);
 }
 
-void	ra(t_list *stacka)
+int	pb(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*tmpa;
-	t_list	*tmpanext;
-
-	tmpa = stacka;
-	tmpanext = tmpa->next;
-	tmpa->next = NULL;
-	ft_lstlast(tmpanext)->next = tmpa;
-	stacka = tmpanext;
-}
-
-void	rb(t_list *stackb)
-{
-	t_list	*tmpb;
-	t_list	*tmpbnext;
-
-	tmpb = stackb;
-	tmpbnext = tmpb->next;
-	tmpb->next = NULL;
-	ft_lstlast(tmpbnext)->next = tmpb;
-	stackb = tmpbnext;
-}
-
-void	rr(t_list *stacka, t_list *stackb)
-{
-	ra(stacka);
-	rb(stackb);
+	if (push(stack_b, stack_a) == -1)
+		return (-1);
+	ft_putendl_fd("pb", 1);
+	return (0);
 }

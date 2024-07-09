@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 11:21:19 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/09 15:20:45 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/09 15:39:31 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ int			sorted(t_list *stacka, int *nums, int size);
 void		sort(t_list *stacka, t_list *stackb, int *nums, int size);
 void		fill_stacks(t_list *stacka, int *nums, int size);
 void		allocate_stacks(t_list *stacka, t_list *stackb, int size);
-void		sa(t_list *stacka);
-void		sb(t_list *stackb);
-void		ss(t_list *stacka, t_list *stackb);
-void		pa(t_list *stacka, t_list *stackb);
-void		pb(t_list *stacka, t_list *stackb);
-void		rra(t_list *stacka);
-void		rrb(t_list *stackb);
-void		rrr(t_list *stacka, t_list *stackb);
-void		ra(t_list *stacka);
-void		rb(t_list *stackb);
-void		rr(t_list *stacka, t_list *stackb);
+void		sa(t_list **stacka);
+void		sb(t_list **stackb);
+void		ss(t_list **stacka, t_list **stackb);
+void		pa(t_list **stacka, t_list **stackb);
+void		pb(t_list **stacka, t_list **stackb);
+void		rra(t_list **stacka);
+void		rrb(t_list **stackb);
+void		rrr(t_list **stacka, t_list **stackb);
+void		ra(t_list **stacka);
+void		rb(t_list **stackb);
+void		rr(t_list **stacka, t_list **stackb);
 #endif
