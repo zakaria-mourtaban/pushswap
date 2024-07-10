@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 13:17:30 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/09 12:32:30 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/10 20:10:43 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,8 @@ void	allocate_stacks(t_list *stacka, t_list *stackb, int size)
 	tmpb = stackb;
 	while (i < size)
 	{
-		ft_lstadd_back(&tmpa, ft_lstnew(NULL));
-		ft_lstadd_back(&tmpb, ft_lstnew(NULL));
+		ft_lstadd_back(&tmpa, ft_lstnew(0));
+		ft_lstadd_back(&tmpb, ft_lstnew(0));
 		i++;
 	}
 }

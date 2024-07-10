@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 14:00:06 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/09 15:38:34 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/10 19:46:32 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int	swap(t_list **stack)
 	head = *stack;
 	next = head->next;
 	if (!head && !next)
-		ft_error("Error occured while swapping!");
-	tmp_val = head->content;
+		errorandexit("Error occured while swapping!");
+	tmp_val = *(int *)head->content;
 	tmp_index = head->index;
-	head->content = next->content;
+	*(int *)head->content = *(int *)next->content;
 	head->index = next->index;
-	next->content = tmp_val;
+	*(int *)next->content = tmp_val;
 	next->index = tmp_index;
 	return (0);
 }

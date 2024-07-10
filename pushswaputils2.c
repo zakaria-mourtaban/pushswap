@@ -6,17 +6,21 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 13:50:52 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/09 13:51:45 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/10 20:53:34 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	printlist(t_list *node)
+void	printlist(t_list **stack)
 {
 	t_list	*tmp;
+	t_list	*node;
 	int		*d;
 
+	node = *stack;
+	if (node == NULL)
+		return ;
 	tmp = node;
 	while (tmp != NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:45:02 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/09 13:45:53 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/10 18:59:18 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	errorandexit(char *msg)
 {
-	printf("%s", msg);
-	exit(1);
+	ft_putendl_fd(msg, 1);
+	exit(0);
 }
 
 void	free_variables(char **variables, int *single_ptr)
