@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 13:50:52 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/10 20:53:34 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/11 12:31:57 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	printlist(t_list **stack)
 	t_list	*node;
 	int		*d;
 
+	printf("\n");
 	node = *stack;
 	if (node == NULL)
 		return ;
@@ -26,7 +27,7 @@ void	printlist(t_list **stack)
 	{
 		d = tmp->content;
 		if (d != NULL)
-			printf("%d ", *d);
+			printf("%d\n", *(int *)tmp->content);
 		tmp = tmp->next;
 	}
 }

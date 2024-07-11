@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:45:02 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/10 18:59:18 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/11 12:19:37 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	morethanint(char **vars)
 	i = 0;
 	while (vars[i] != NULL)
 	{
+		if (ft_strlen(vars[i]) > 10)
+			return (1);
 		num = ft_atoll(vars[i]);
 		if (num > (long)INT_MAX || num < (long)INT_MIN)
 			return (1);

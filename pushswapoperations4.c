@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 15:38:03 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/10 21:05:26 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/11 10:51:01 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ t_list	*get_list_bottom(t_list *stack)
 }
 
 /* get_list_before_bottom:
-*	Returns the second to last element of the stack.
-*/
+ *	Returns the second to last element of the stack.
+ */
 t_list	*get_list_before_bottom(t_list *stack)
 {
 	while (stack && stack->next && stack->next->next != NULL)
@@ -31,17 +31,17 @@ t_list	*get_list_before_bottom(t_list *stack)
 
 int	reverserotate(t_list **stack)
 {
-	//t_list	*head;
 	t_list	*beforelast;
+	t_list	*head;
 	t_list	*tail;
 
-	//head = *stack;
+	head = *stack;
 	tail = ft_lstlast(*stack);
 	beforelast = *stack;
-	while (beforelast->next->next->next != NULL)
+	while (beforelast->next->next != NULL)
 		beforelast = beforelast->next;
 	beforelast->next = NULL;
-	//tail->next = head;
+	tail->next = head;
 	*stack = tail;
 	return (0);
 }

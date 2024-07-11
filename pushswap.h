@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 11:21:19 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/10 20:54:01 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/11 10:59:20 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		free_variables(char **variables, int *single_ptr);
 void		errorandexit(char *msg);
 int			issorted(t_list *stacka);
 int			sorted(t_list *stacka, int *nums, int size);
-void		sort(t_list *stacka, t_list *stackb, int *nums, int size);
+void		sort(t_list **stacka, t_list **stackb, int *nums, int size);
 void		fill_stacks(t_list *stacka, int *nums, int size);
 void		allocate_stacks(t_list *stacka, t_list *stackb, int size);
 int			sa(t_list **stack_a);
