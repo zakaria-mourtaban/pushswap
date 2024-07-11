@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 11:21:19 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/11 10:59:20 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:32:30 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,5 @@ int			rrr(t_list **stack_a, t_list **stack_b);
 int			ra(t_list **stack_a);
 int			rb(t_list **stack_b);
 int			rr(t_list **stack_a, t_list **stack_b);
+t_list		*getlist(t_list **stack);
 #endif

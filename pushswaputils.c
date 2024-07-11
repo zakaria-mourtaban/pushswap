@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 13:17:30 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/11 12:40:30 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:32:10 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,6 @@ int	sorted(t_list *stacka, int *nums, int size)
 	return (issorted(stacka));
 }
 // add sorting algorithm
-
-t_list	*getlist(t_list **stack)
-{
-	t_list	*tmp;
-
-	tmp = *stack;
-	return (tmp);
-}
 
 void	sort(t_list **stacka, t_list **stackb, int *nums, int size)
 {

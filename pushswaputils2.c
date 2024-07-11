@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 13:50:52 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/11 12:31:57 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:32:15 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,12 @@ void	fillstack(t_list *stacka, int *nums, int size)
 		tmp = tmp->next;
 		i++;
 	}
+}
+
+t_list	*getlist(t_list **stack)
+{
+	t_list	*tmp;
+
+	tmp = *stack;
+	return (tmp);
 }
