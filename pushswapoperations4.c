@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 15:38:03 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/11 10:51:01 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:22:27 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int	reverserotate(t_list **stack)
 	beforelast->next = NULL;
 	tail->next = head;
 	*stack = tail;
+	fillindex(stack);
 	return (0);
 }
 

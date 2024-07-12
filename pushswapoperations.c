@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 14:00:06 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/10 19:46:32 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:22:11 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	swap(t_list **stack)
 	head->index = next->index;
 	*(int *)next->content = tmp_val;
 	next->index = tmp_index;
+	fillindex(stack);
 	return (0);
 }
 

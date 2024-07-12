@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 15:37:44 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/10 20:37:22 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:22:20 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	rotate(t_list **stack)
 	*stack = head->next;
 	head->next = NULL;
 	tail->next = head;
+	fillindex(stack);
 	return (0);
 }
 

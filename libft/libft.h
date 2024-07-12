@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:20:02 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/09 10:29:00 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:34:55 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 	int				index;
+	int				target;
+	int				cost;
 }					t_list;
 
 int		ft_isspace(char c);

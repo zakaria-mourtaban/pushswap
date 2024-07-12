@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 13:17:30 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/11 16:32:10 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/12 20:16:59 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,26 @@ int	sorted(t_list *stacka, int *nums, int size)
 
 void	sort(t_list **stacka, t_list **stackb, int *nums, int size)
 {
-	while (!sorted(*stacka, nums, size) && getlist(stacka)->next != NULL)
-	{
-		if (getlist(stacka)->content < getlist(stacka)->next->content)
-			sa(stacka);
-		rra(stacka);
-	}
+	while (ft_lstsize(stacka) > 3)
+		pb(stacka, stackb);
+	tinysort(stacka);
+	settarget(stacka, stackb);
 	(void)stackb;
+	(void)nums;
+	(void)size;
+}
+
+void	nodemintarget(t_list *stacka, t_list **stackb)
+{
+	t_list	*tmpb;
+
+	tmpb = *stackb;
+	while (tmpb != NULL)
+	{
+		tmpb->target = nodemin(stacka)->content;
+		tmpb = tmpb->next;
+	}
+	
 }
 
 void	fill_stacks(t_list *stacka, int *nums, int size)
@@ -75,6 +88,7 @@ void	fill_stacks(t_list *stacka, int *nums, int size)
 	while (i < size)
 	{
 		tmpa->content = (nums + i);
+		tmpa->index = i;
 		tmpa = tmpa->next;
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 15:36:58 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/09 15:38:49 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:22:00 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	push(t_list **stack_to, t_list **stack_from)
 		tmp->next = head_to;
 		*stack_to = tmp;
 	}
+	fillindex(stack_to);
+	fillindex(stack_from);
 	return (0);
 }
 
