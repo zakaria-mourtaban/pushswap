@@ -6,28 +6,11 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 15:38:03 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/12 19:22:27 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/13 15:20:51 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
-t_list	*get_list_bottom(t_list *stack)
-{
-	while (stack && stack->next != NULL)
-		stack = stack->next;
-	return (stack);
-}
-
-/* get_list_before_bottom:
- *	Returns the second to last element of the stack.
- */
-t_list	*get_list_before_bottom(t_list *stack)
-{
-	while (stack && stack->next && stack->next->next != NULL)
-		stack = stack->next;
-	return (stack);
-}
 
 int	reverserotate(t_list **stack)
 {

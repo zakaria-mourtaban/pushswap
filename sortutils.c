@@ -6,13 +6,11 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 17:25:06 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/12 20:16:45 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/13 15:26:54 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
-
 
 void	fillindex(t_list **stack)
 {
@@ -21,16 +19,15 @@ void	fillindex(t_list **stack)
 
 	i = 0;
 	tmp = *stack;
-	while (tmp)
+	while (tmp != NULL)
 	{
 		tmp->index = i;
 		tmp = tmp->next;
 		i++;
 	}
-	
 }
 
-t_list	*nodemax(t_list	**stack)
+t_list	*nodemax(t_list **stack)
 {
 	t_list	*max;
 	t_list	*tmp;
@@ -46,7 +43,7 @@ t_list	*nodemax(t_list	**stack)
 	return (max);
 }
 
-t_list	*nodemin(t_list	**stack)
+t_list	*nodemin(t_list **stack)
 {
 	t_list	*max;
 	t_list	*tmp;
@@ -62,39 +59,63 @@ t_list	*nodemin(t_list	**stack)
 	return (max);
 }
 
-void	tinysort(t_list	**stack)
+void	tinysort(t_list **stacka)
 {
 	t_list	*maxnode;
 
-	if (ft_lstsize(*stack) > 3)
+	if (ft_lstsize(*stacka) > 3)
 		return ;
-	maxnode = nodemax(stack);
-	printf("max:%d",*(int *)maxnode->content);
-	if ((*stack) == maxnode)
-		ra(stack);
-	else if ((*stack)->next == maxnode)
-		rra(stack);
-	if (*(int *)((*stack)->content) > (*(int *)(*stack)->next->content))
-		sa(stack);
+	maxnode = nodemax(stacka);
+	if ((*stacka) == maxnode)
+		ra(stacka);
+	else if ((*stacka)->next == maxnode)
+		rra(stacka);
+	if (*(int *)((*stacka)->content) > (*(int *)(*stacka)->next->content))
+		sa(stacka);
 }
 
-void	settarget(t_list **stacka, t_list **stackb, int *nums, int size)
+void	cost(t_list **stacka, t_list **stackb)
 {
 	t_list	*tmpa;
 	t_list	*tmpb;
 
-	nodemintarget(stacka, stackb);
+	tmpa = *stacka;
+	tmpb = *stackb;
+	while (tmpa != NULL)
+	{
+		tmpa->cost = ft_lstsize(*stacka) - tmpa->index;
+		if (tmpa->index < (ft_lstsize(*stacka) / 2))
+		{
+			tmpa->abovemedian = 1;
+			tmpa->cost = tmpa->index;
+		}
+		tmpa = tmpa->next;
+	}
 	while (tmpb != NULL)
 	{
-		tmpa = *stacka;
-		tmpb = *stackb;
-		while (tmpa != NULL)
+		tmpb->cost = ft_lstsize(*stackb) - tmpb->index;
+		if (tmpb->index < ft_lstsize(*stackb) / 2)
 		{
-			if (tmpa->content > tmpb->content)
-				tmpb->target = tmpa->content;
+			tmpb->abovemedian = 1;
+			tmpb->cost = tmpb->index;
 		}
-		
+		tmpb = tmpb->next;
 	}
-	
-
 }
+// void	settarget(t_list **stacka, t_list **stackb, int *nums, int size)
+// {
+// 	t_list	*tmpa;
+// 	t_list	*tmpb;
+
+// 	nodemintarget(stacka, stackb);
+// 	while (tmpb != NULL)
+// 	{
+// 		tmpa = *stacka;
+// 		tmpb = *stackb;
+// 		while (tmpa != NULL)
+// 		{
+// 			if (tmpa->content > tmpb->content)
+// 				tmpb->target = tmpa->content;
+// 		}
+// 	}
+// }

@@ -6,11 +6,26 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 13:17:30 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/12 20:16:59 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/13 16:14:55 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
+
+void	sort(t_list **stacka, t_list **stackb, int *nums, int size)
+{
+	while (ft_lstsize(*stacka) > 3)
+		pb(stacka, stackb);
+	tinysort(stacka);
+	while (!sorted(*stacka, nums, size))
+	{
+		settarget(stacka, stackb);
+		cost(stacka, stackb);
+		pushcheapest(stacka, stackb);
+	}
+	(void)nums;
+	(void)size;
+}
 
 int	issorted(t_list *stacka)
 {
@@ -52,31 +67,6 @@ int	sorted(t_list *stacka, int *nums, int size)
 		return (0);
 	return (issorted(stacka));
 }
-// add sorting algorithm
-
-void	sort(t_list **stacka, t_list **stackb, int *nums, int size)
-{
-	while (ft_lstsize(stacka) > 3)
-		pb(stacka, stackb);
-	tinysort(stacka);
-	settarget(stacka, stackb);
-	(void)stackb;
-	(void)nums;
-	(void)size;
-}
-
-void	nodemintarget(t_list *stacka, t_list **stackb)
-{
-	t_list	*tmpb;
-
-	tmpb = *stackb;
-	while (tmpb != NULL)
-	{
-		tmpb->target = nodemin(stacka)->content;
-		tmpb = tmpb->next;
-	}
-	
-}
 
 void	fill_stacks(t_list *stacka, int *nums, int size)
 {
@@ -89,6 +79,8 @@ void	fill_stacks(t_list *stacka, int *nums, int size)
 	{
 		tmpa->content = (nums + i);
 		tmpa->index = i;
+		tmpa->abovemedian = 0;
+		tmpa->target = NULL;
 		tmpa = tmpa->next;
 		i++;
 	}

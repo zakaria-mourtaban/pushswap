@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 11:18:55 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/12 17:33:49 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/13 14:17:09 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ void	init_sorting(int *nums, int size, t_list *stacka, t_list *stackb)
 	allocate_stacks(stacka, stackb, size);
 	fill_stacks(stacka, nums, size);
 	sort(&stacka, &stackb, nums, size);
-	printf("stack a");
-	printlist(&stacka);
-	printf("stack b");
-	printlist(&stackb);
-	printf("\nissorted: %d", sorted(stacka, nums, size));
+	// printf("stack a");
+	// printlist(&stacka);
+	// printf("stack b");
+	// printlist(&stackb);
+	// printf("\nissorted: %d", sorted(stacka, nums, size));
 }
 
 int	main(int ac, char *av[])

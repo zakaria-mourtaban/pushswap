@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 13:50:52 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/11 16:32:15 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/13 14:01:12 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	printlist(t_list **stack)
 	{
 		d = tmp->content;
 		if (d != NULL)
-			printf("%d\n", *(int *)tmp->content);
+			printf("%d index : %d\n", *(int *)tmp->content, tmp->index);
 		tmp = tmp->next;
 	}
 }

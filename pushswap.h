@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 11:21:19 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/12 20:16:18 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/13 15:27:19 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@
 # include <limits.h>
 # include <stdio.h>
 
-void		nodemintarget(t_list *stacka, t_list **stackb);
-t_list		*nodemax(t_list	**stack);
-t_list		*nodemin(t_list	**stack);
+void		pushcheapest(t_list **stacka, t_list **stackb);
+void		cost(t_list **stacka, t_list **stackb);
+void		settarget(t_list **stacka, t_list **stackb);
+void		nodemintarget(t_list **stacka, t_list **stackb);
+t_list		*nodemax(t_list **stack);
+t_list		*nodemin(t_list **stack);
 void		fillindex(t_list **stack);
-void		tinysort(t_list	**stack);
-void		comparecopy(t_list	**stacka, t_list **stackb);
-void		splitstack(t_list **stacka, t_list **stackb);
+void		tinysort(t_list **stacka);
 void		fillstack(t_list *stacka, int *nums, int size);
 void		printlist(t_list **node);
 int			dupinarr(int *nums, int size);

@@ -1,6 +1,6 @@
 NAME = push_swap
 CFLAGS = -Wall -Werror -Wextra -g
-SRCS = pushswap.c pushswaputils.c pushswaputils2.c sortutils.c pushswapoperations.c pushswapoperations2.c pushswapoperations3.c pushswapoperations4.c errhandleutils2.c errhandleutils1.c
+SRCS = pushswap.c pushswaputils.c pushswaputils2.c sortingalg.c sortutils.c pushswapoperations.c pushswapoperations2.c pushswapoperations3.c pushswapoperations4.c errhandleutils2.c errhandleutils1.c
 OBJS = $(SRCS:.c=.o)
 #REMOVE THE G FLAG WHEN DONE
 # Paths to ft_printf and libft directories

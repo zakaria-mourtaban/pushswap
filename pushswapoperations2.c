@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 15:36:58 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/12 19:22:00 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/13 15:24:24 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	pa(t_list **stack_a, t_list **stack_b)
 {
 	if (push(stack_a, stack_b) == -1)
 		return (-1);
+	settarget(stack_a, stack_b);
+	cost(stack_a, stack_b);
 	ft_putendl_fd("pa", 1);
 	return (0);
 }
@@ -53,6 +55,8 @@ int	pb(t_list **stack_a, t_list **stack_b)
 {
 	if (push(stack_b, stack_a) == -1)
 		return (-1);
+	settarget(stack_a, stack_b);
+	cost(stack_a, stack_b);
 	ft_putendl_fd("pb", 1);
 	return (0);
 }
