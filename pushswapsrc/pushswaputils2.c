@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 13:50:52 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/13 14:01:12 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/15 03:45:59 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,19 @@ t_list	*getlist(t_list **stack)
 
 	tmp = *stack;
 	return (tmp);
+}
+
+void	ft_free(t_list **lst)
+{
+	t_list	*tmp;
+
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		(*lst)->content = 0;
+		free(*lst);
+		*lst = tmp;
+	}
 }

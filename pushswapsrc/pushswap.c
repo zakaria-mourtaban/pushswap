@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 11:18:55 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/15 01:54:02 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/15 03:45:52 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@ void	init_sorting(int *nums, int size, t_list *stacka, t_list *stackb)
 	stacka = ft_lstnew(NULL);
 	if (stacka == NULL)
 		return ;
-	allocate_stacks(stacka, stackb, size);
+	allocate_stacks(stacka, size);
 	fill_stacks(stacka, nums, size);
 	sort(&stacka, &stackb, nums, size);
-	// printf("stack a");
-	// printlist(&stacka);
-	// printf("stack b");
-	// printlist(&stackb);
-	// printf("\nissorted: %d", sorted(stacka, nums, size));
+	ft_free(&stacka);
+	ft_free(&stackb);
+	free(nums);
 }
 
 int	main(int ac, char *av[])
@@ -48,10 +46,9 @@ int	main(int ac, char *av[])
 		errorandexit("ERROR");
 	arrsize = vartoarr(variables, &nums);
 	if (arrsize == 0)
-		free_variables(variables, nums);
+		free_variables(variables, nums, 1);
 	if (dupinarr(nums, arrsize) && arrsize > 1)
-		errorandexit("ERRORdup");
+		errorandexit("ERROR");
 	init_sorting(nums, arrsize, stacka, stackb);
-	// make a free function
 	return (0);
 }

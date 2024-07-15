@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 15:45:02 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/11 12:19:37 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/15 02:51:08 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	errorandexit(char *msg)
 	exit(0);
 }
 
-void	free_variables(char **variables, int *single_ptr)
+void	free_variables(char **variables, int *single_ptr, int bol)
 {
 	int	i;
 
@@ -33,7 +33,8 @@ void	free_variables(char **variables, int *single_ptr)
 		i++;
 	}
 	free(variables);
-	errorandexit("ERROR");
+	if (bol == 1)
+		errorandexit("ERROR");
 }
 
 int	morethanint(char **vars)

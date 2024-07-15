@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 13:17:30 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/15 01:57:30 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/15 03:27:07 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ void	sort(t_list **stacka, t_list **stackb, int *nums, int size)
 	}
 	while (!sorted(*stacka, nums, size))
 		rra(stacka, stackb);
-	// (void)nums;
-	// (void)size;
 }
 
 int	issorted(t_list *stacka)
@@ -88,19 +86,16 @@ void	fill_stacks(t_list *stacka, int *nums, int size)
 	}
 }
 
-void	allocate_stacks(t_list *stacka, t_list *stackb, int size)
+void	allocate_stacks(t_list *stacka, int size)
 {
 	t_list	*tmpa;
-	t_list	*tmpb;
 	int		i;
 
 	i = 0;
 	tmpa = stacka;
-	tmpb = stackb;
 	while (i < size - 1)
 	{
 		ft_lstadd_back(&tmpa, ft_lstnew(0));
-		ft_lstadd_back(&tmpb, ft_lstnew(0));
 		i++;
 	}
 }

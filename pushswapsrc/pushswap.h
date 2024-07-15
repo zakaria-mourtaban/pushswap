@@ -6,7 +6,7 @@
 /*   By: zmourtab <zakariamourtaban@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 11:21:19 by zmourtab          #+#    #+#             */
-/*   Updated: 2024/07/15 02:21:07 by zmourtab         ###   ########.fr       */
+/*   Updated: 2024/07/15 03:43:53 by zmourtab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ int			morethanint(char **vars);
 int			ft_isdigitarr(char **s);
 int			vartoarr(char **var, int **arr);
 long long	ft_atoll(const char *str);
-void		free_variables(char **variables, int *single_ptr);
+void		free_variables(char **variables, int *single_ptr, int bol);
 void		errorandexit(char *msg);
 int			issorted(t_list *stacka);
 int			sorted(t_list *stacka, int *nums, int size);
 void		sort(t_list **stacka, t_list **stackb, int *nums, int size);
 void		fill_stacks(t_list *stacka, int *nums, int size);
-void		allocate_stacks(t_list *stacka, t_list *stackb, int size);
+void		allocate_stacks(t_list *stacka, int size);
 int			sa(t_list **stack_a, t_list **stack_b);
 int			sb(t_list **stack_a, t_list **stack_b);
 int			ss(t_list **stack_a, t_list **stack_b);
@@ -52,4 +52,5 @@ int			ra(t_list **stack_a, t_list **stack_b);
 int			rb(t_list **stack_a, t_list **stack_b);
 int			rr(t_list **stack_a, t_list **stack_b);
 t_list		*getlist(t_list **stack);
+void	ft_free(t_list **lst);
 #endif
